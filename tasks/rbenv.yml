@@ -1,7 +1,8 @@
 ---
-- name: confere diretorio  ~/.rbenv.
-  file: ~/.rbenv 
-  state: directory
+- name: confere diretorio  '~/.rbenv'.
+  file: 
+    path: ~/.rbenv 
+    state: directory
 - name: get script for install rbenv.
   git:
     repo: https://github.com/rbenv/rbenv.git
