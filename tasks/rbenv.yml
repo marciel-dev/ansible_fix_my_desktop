@@ -2,6 +2,9 @@
 - name: confere diretorio  '~/.rbenv'.
   file: 
     path: ~/.rbenv 
+    owner: $USER 
+    group: $USER 
+    mode: 0755 
     state: directory
 - name: get script for install rbenv.
   git:
