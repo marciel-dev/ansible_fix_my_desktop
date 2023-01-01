@@ -1,7 +1,7 @@
 ---
 - name: get script for install rbenv
   git:
-    repo: clone https://github.com/rbenv/rbenv.git
+    repo: https://github.com/rbenv/rbenv.git
     dest: ~/.rbenv
     clone: yes
     update: yes
