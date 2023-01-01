@@ -2,8 +2,8 @@
 - name: confere diretorio  '~/.rbenv'.
   file: 
     path: ~/.rbenv 
-    owner: $USER 
-    group: $USER 
+    owner: marciel 
+    group: marciel
     mode: 0755 
     state: directory
 - name: get script for install rbenv.
