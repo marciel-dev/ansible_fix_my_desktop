@@ -10,6 +10,6 @@
 - name: configure rbenv
   shell: echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 - name: configre bash
-  command: source ~/.bashrc
+  shell: source ~/.bashrc
 
 
