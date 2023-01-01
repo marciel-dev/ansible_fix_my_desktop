@@ -1,15 +1,14 @@
 ---
 - name: get script for install rbenv
-  get_url:
-    url: https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer 
-    dest: /tmp/rbenv-installer.sh
-    mode: 0755
-- name: install rbenv
-  command: /tmp/rbenv-installer.sh
+  git:
+    repo: clone https://github.com/rbenv/rbenv.git
+    dest: ~/.rbenv
+    clone: yes
+    update: yes
+    shell: echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+- name: configure rbenv
+  shell: echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 - name: configre bash
-  command: echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc && echo 'eval "$(rbenv init -)"' >> ~/.bashrc && source ~/.bashrc
-- name: Remove the rbenv-installer.sh
-  file: 
-    path: /tmp/rbenv-installer.sh
-    state: absent
+  command: source ~/.bashrc
+
 
