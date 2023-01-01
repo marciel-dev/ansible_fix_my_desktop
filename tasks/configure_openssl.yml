@@ -5,4 +5,14 @@
     validate_certs: false
     dest: /downloads/openssl-1.1.1g.tar.gz
 
+- name: Download Open Ssl
+  get_url: 
+    url: https://www.openssl.org/source/openssl-1.1.1g.tar.gz dest=/tmp/zsh-installer.sh
+    
+# - name: Execute the zsh-installer.sh
+#   shell: /tmp/zsh-installer.sh
 
+# - name: Remove the zsh-installer.sh
+#   file: 
+#     path: /tmp/zsh-installer.sh 
+#     state: absent
