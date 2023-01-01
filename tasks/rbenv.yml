@@ -1,11 +1,13 @@
 ---
+- name: confere diretorio  ~/.rbenv
+  file: path=~/.rbenv state=directory
 - name: get script for install rbenv
   git:
     repo: https://github.com/rbenv/rbenv.git
     dest: ~/.rbenv
     clone: yes
     update: yes
-- name: test
+- name: echo bash
   shell: echo 'eval "$(~/.rbenv/bin/rbenv init - bash)"' >> ~/.bashrc
 # - name: configure rbenv
 #   shell: echo 'eval "$(rbenv init -)"' >> ~/.bashrc
