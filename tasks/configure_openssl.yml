@@ -1,0 +1,8 @@
+---
+- name: download open ssl
+  get_url:
+    url: https://www.openssl.org/source/openssl-1.1.1g.tar.gz
+    validate_certs: false
+    dest: /downloads/openssl-1.1.1g.tar.gz
+
+
